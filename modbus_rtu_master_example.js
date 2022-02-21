@@ -2,7 +2,8 @@
 
 const modbus_rtu_master = require("./modbus_rtu_master.js");
 
-var c = new modbus_rtu_master.modbus_rtu_master(process.argv[2] || '/dev/ttyUSB0', {
+var c = new modbus_rtu_master.modbus_rtu_master({
+	"path": process.argv[2] || '/dev/ttyUSB0',
 	"baudRate": 9600,
 	"stopBits": 1,
 	"dataBits": 8,

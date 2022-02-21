@@ -2,7 +2,8 @@
 
 const modbus_rtu_slave = require("./modbus_rtu_slave.js");
 
-var s = new modbus_rtu_slave.modbus_rtu_slave(process.argv[2] || '/dev/ttyUSB0', {
+var s = new modbus_rtu_slave.modbus_rtu_slave({
+	"path": process.argv[2] || '/dev/ttyUSB0',
 	"baudRate": 9600,
 	"stopBits": 1,
 	"dataBits": 8,

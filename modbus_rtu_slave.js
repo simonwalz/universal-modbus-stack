@@ -4,14 +4,14 @@ const EventEmitter = require('events').EventEmitter;
 const modbus_datagram = require("./modbus_rtu_datagram.js");
 const helper = require("./helper.js");
 
-const SerialPort = require('serialport')
+const SerialPort = require('serialport').SerialPort;
 
-exports.modbus_rtu_slave = function(device, settings) {
+exports.modbus_rtu_slave = function(settings) {
 	var _this = this;
 
 	this.buffer = Buffer.from([]);
 
-	this.port = new SerialPort(device, settings);
+	this.port = new SerialPort(settings);
 	this.port.on('data', function (data) {
 		_this.buffer = Buffer.concat([_this.buffer, data]);
 
