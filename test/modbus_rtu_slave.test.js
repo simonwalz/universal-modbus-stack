@@ -11,18 +11,20 @@ var cb_write = null;
 
 const modbus_datagram = require("../modbus_rtu_datagram.js");
 const modbus_rtu_slave = proxyquire('../modbus_rtu_slave.js', {
-	serialport: function() {
-		return {
-			on: function(eventname, callback) {
-				cb_data = callback;
-			},
-			write: function(data, callback) {
-				if (cb_write)
-					cb_write(data);
-				if (typeof callback === "function")
-					callback(null);
-			},
-		};
+	serialport: {
+		SerialPort: function() {
+			return {
+				on: function(eventname, callback) {
+					cb_data = callback;
+				},
+				write: function(data, callback) {
+					if (cb_write)
+						cb_write(data);
+					if (typeof callback === "function")
+						callback(null);
+				},
+			};
+		}
 	}
 });
 var s = new modbus_rtu_slave.modbus_rtu_slave();
