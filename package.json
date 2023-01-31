@@ -8,7 +8,7 @@
   },
   "author": "Simon Walz",
   "dependencies": {
-    "crc": "^3.8.0",
+    "crc": "^4.3.2",
     "serialport": "^10.5.0"
   },
   "devDependencies": {
