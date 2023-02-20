@@ -2,3 +2,5 @@ node_modules/
 .*.un~
 .*.swp
 /virtual-serial*
+old/
+test/
