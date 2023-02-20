@@ -1,6 +1,6 @@
 {
   "name": "universal-modbus-stack",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Modebus Stack for universal usage. E.g. test mocks",
   "main": "index.js",
   "scripts": {
