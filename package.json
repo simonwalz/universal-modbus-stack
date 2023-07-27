@@ -9,7 +9,7 @@
   "author": "Simon Walz",
   "dependencies": {
     "crc": "^4.3.2",
-    "serialport": "^10.5.0"
+    "serialport": "^11.0.1"
   },
   "devDependencies": {
     "proxyquire": "^2.1.3",
