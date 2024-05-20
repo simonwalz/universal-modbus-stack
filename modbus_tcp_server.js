@@ -32,7 +32,9 @@ exports.modbus_tcp_server = function(port, hostname) {
 			}
 		});
 	});
-	this.server.listen(port || 502, hostname || '127.0.0.1');
+	this.server.listen(port || 502, hostname || 'localhost', function(err) {
+		_this.emit("open", err);
+	});
 	EventEmitter.call(this);
 };
 util.inherits(exports.modbus_tcp_server, EventEmitter);
