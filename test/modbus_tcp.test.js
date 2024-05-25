@@ -8,8 +8,19 @@ const test = require('tape');
 const server = require("../modbus_tcp_server_example.js");
 const modbus_tcp_client = require("../modbus_tcp_client.js");
 
+test('modbus tcp, check server started', function(t) {
+	t.plan(1);
 
-test('modbus rtu slave, client 1', function (t) {
+	if (server.server.server.listening) {
+		t.ok(1, "already running");
+	} else {
+		server.server.on("open", function(err) {
+			t.equal(err, undefined, "running");
+		});
+	}
+});
+
+test('modbus tcp, client 1', function (t) {
 	t.plan(4);
 	var c = new modbus_tcp_client.modbus_tcp_client("localhost", 8502);
 
