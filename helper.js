@@ -1,5 +1,3 @@
-const helper = require("./helper.js");
-
 exports.log_buffer = function(b) {
 	let m = b.toString('hex').match(/../g);
 	if (!m) return "<>";

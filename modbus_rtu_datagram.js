@@ -1,5 +1,6 @@
 const crc16modbus = require("crc/crc16modbus");
 const modbus_datagram = require("./modbus_datagram.js");
+const helper = require("./helper.js");
 
 exports.decode = function(datagram, mode) {
 	var p = modbus_datagram.decode(datagram, mode);
